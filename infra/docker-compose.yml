@@ -1,0 +1,50 @@
+version: "3.9"
+
+services:
+  opensearch:
+    image: opensearchproject/opensearch:2.12.0
+    container_name: opensearch
+    environment:
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "OPENSEARCH_JAVA_OPTS=-Xms1g -Xmx1g"
+      - plugins.security.disabled=true
+      - "OPENSEARCH_INITIAL_ADMIN_PASSWORD=Xy9#mK2-pL7+qR5@wN3zT"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - "9200:9200"
+      - "9600:9600"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200 >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+
+  dashboards:
+    image: opensearchproject/opensearch-dashboards:2.12.0
+    container_name: opensearch-dashboards
+    environment:
+      - OPENSEARCH_HOSTS=["http://opensearch:9200"]
+    ports:
+      - "5601:5601"
+    depends_on:
+      - opensearch
+
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=app
+      - POSTGRES_PASSWORD=app
+      - POSTGRES_DB=insani
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app -d insani"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+
