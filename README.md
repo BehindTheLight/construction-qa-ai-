@@ -37,8 +37,9 @@ AI-QA-PG is a full-stack application that enables natural language querying of c
 - PDF.js for document viewing
 
 **AI/ML:**
-- Naga AI for embeddings (text-embedding-3-large, 3072 dimensions)
-- Claude Haiku 4.5 for answer generation (via Naga AI)
+- Naga AI API
+- Gemini embeddings (gemini-embedding-001, 3072 dimensions)
+- Claude Haiku 4.5 for answer generation 
 - GPT-4o-mini for vision tasks
 - Cohere for reranking
 
