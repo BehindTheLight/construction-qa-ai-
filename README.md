@@ -503,48 +503,10 @@ When the LLM returns "Not found in the project documents," the system automatica
 - Clicking a suggestion displays the cached answer immediately
 - This helps users discover information even with imperfect queries
 
-### Performance Metrics
-
-**Ingestion:**
-- Standard documents: 30-40 pages/minute
-- Image-heavy documents: 15-20 pages/minute
-
-**Query Response:**
-- Search + Rerank: 150-450ms
-- LLM Generation: 1-3 seconds (streaming starts in <500ms)
-- Total: 1.5-3.5 seconds
-
-**Query Suggestions:**
-- Generation + Testing: 2-3 seconds
-- Parallel testing: Up to 3 alternatives tested simultaneously
-- Success rate: 60-80% (at least 1 working suggestion)
-
-**Accuracy:**
-- Citation precision: 95%+ (correct page numbers)
-- Answer relevance: 85-90% (depends on LLM model)
-
-### System Intelligence Features
-
-**TOC-Aware Search:**
-- Automatically routes queries to relevant document sections
-- Reduces search time by 30-40% for section-specific queries
-
-**Parallel Execution:**
-- Document and table searches run simultaneously
-- Reduces latency by 40-50% compared to sequential execution
-
-**Streaming Responses:**
-- Users see partial answers immediately
-- Perceived response time reduced by 60-70%
-
-**Smart Suggestions:**
-- Helps users discover information with imperfect queries
-- Reduces "dead-end" queries by 70%
-- Pre-fetches answers for instant display
 
 ## License
 
-This project is proprietary and confidential. Unauthorized copying, distribution, or use is prohibited.
+Unauthorized copying, distribution, or use is prohibited.
 
 ## Support
 
@@ -553,4 +515,3 @@ For setup assistance:
 - Check the manual installation instructions in this README
 - Review the API documentation at `http://localhost:8000/docs`
 
-For questions or issues, please contact the project maintainers.
