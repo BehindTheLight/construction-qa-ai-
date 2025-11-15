@@ -88,9 +88,9 @@ Frontend (Next.js)
 
 You will need API keys for the following services:
 
-- **Naga AI** - For LLM and embedding models
+- **Naga AI** - For LLM and embedding API
 - **Cohere** - For reranking
-- **Google Gemini** (optional) - For alternative embedding models
+- **OpenAI/Gemini/Claude** (optional) - Individual API Keys if you don't want to use Naga AI API Keys
 
 ## Quick Start (Automated Setup)
 
